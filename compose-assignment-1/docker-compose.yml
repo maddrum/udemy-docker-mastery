@@ -1,9 +1,8 @@
+version: '2'
+
 services: 
   drupal: 
-    build: 
-      context: .
-      dockerfile: Dockerfile    
-    image: custom-drupal
+    image: drupal:8.8.2
     ports: 
       - '8080:80'
     volumes:
@@ -18,12 +17,11 @@ services:
       POSTGRES_PASSWORD: passwd
       POSTGRES_DB: drupal
       POSTGRES_USER: user
-    volumes: 
-      - drupal-data:/var/lib/postgresql/data
 
 volumes: 
-  drupal-data:
   modules:
   profiles:
   sites:
   themes:
+
+        
